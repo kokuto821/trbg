@@ -10,6 +10,7 @@
                         <?php the_title(); ?>
                     </h2>
                     <ul class="meta">
+                        <li class="meta__category"><?php the_date();?></li>
                         <li class="meta__category"><?php the_category(',');?></li>
                     </ul>
                 </div>

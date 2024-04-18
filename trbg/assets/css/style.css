@@ -256,6 +256,11 @@ img {
   align-items: flex-start;
   width: 100%;
 }
+.main__title--text {
+  font-weight: 500;
+  color: #494949;
+}
+
 .side-bar--left {
   background-color: #e6ffe4;
   width: 100%;

@@ -316,7 +316,10 @@ img {
         align-items: flex-start;
         width: 100%;
 
-        &--text {}
+        &--text {
+            font-weight: 500;
+            color: #494949;
+        }
 
     }
 }
