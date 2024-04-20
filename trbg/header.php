@@ -25,16 +25,16 @@
                     <nav class="header__nav nav" id="js-nav">
                         <ul class="nav__items nav-items">
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p"><a href="">メニュー1</a></p>
+                                <a class="nav-items__item--a">メニュー1</a>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p"><a href="">メニュー2</a></p>
+                                <a class="nav-items__item--a">メニュー2</a>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p"><a href="">メニュー3</a></p>
+                                <a class="nav-items__item--a">メニュー3</a>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p"><a href="">メニュー4</a></p>
+                                <a class="nav-items__item--a">メニュー4</a>
                             </li>
                         </ul>
                     </nav>

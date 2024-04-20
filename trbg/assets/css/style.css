@@ -121,7 +121,7 @@ img {
   top: 0;
   width: 100%;
   height: 100vh;
-  transform: translateX(100%);
+  transform: translateX(0%);
   background-color: #fff;
   /* その場で */
 }
@@ -138,9 +138,6 @@ img {
 }
 .header__nav a {
   opacity: 1;
-}
-.header__nav.active {
-  transform: translateX(0%);
 }
 .header__nav.fadein {
   animation-name: fadeInAnime;
@@ -541,7 +538,7 @@ img {
     border-top: #7e7e7e 0.5px solid;
   }
 }
-.nav-items__item--p {
+.nav-items__item--a {
   color: #fff;
   background-color: #4a4a4a;
   width: 100%;
@@ -551,14 +548,14 @@ img {
   font-size: 0.95rem;
 }
 @media screen and (min-width: 768px) {
-  .nav-items__item--p {
+  .nav-items__item--a {
     margin-bottom: 0;
     background-color: transparent;
     color: #191919;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 880px) {
-  .nav-items__item--p {
+  .nav-items__item--a {
     padding: 0rem;
     font-size: 1rem;
     color: #191919;

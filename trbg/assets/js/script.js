@@ -3,26 +3,24 @@ const ham = $('#js-hamburger');//ハンバーガーボタン
 const nav = $('#js-nav');//ハンバーガーメニュー
 const body = $('body'); // bodyタグを選択
 
-// ナビゲーションメニューの初期状態を設定
-nav.removeClass('fadein fadeout'); // fadeoutクラスを一時的に削除
-nav.addClass('fadeout');
+
+nav.css('opacity', 0);//navの透明度の初期値を0にする
 
 ham.on('click', function () {
-  ham.toggleClass('active','fadein'); // ハンバーガーメニューにactiveクラスを付け外し
+  ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
   nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
 
   if (nav.hasClass('active')) {
     nav.addClass('active');
-    nav.addClass('fadein');
-    nav.removeClass('fadeout');
+    nav.fadeTo('slow', 1); 
     body.addClass('no-scroll');
   } else {
     nav.removeClass('active');
-    nav.addClass('fadeout');
-    nav.removeClass('fadein');
+    nav.fadeTo('slow', 0);
     body.removeClass('no-scroll');
   }
 });
+//end
 
 //スクロールするとヘッダーが消え、ページTOPに戻るボタンの追加
 $(window).on('scroll',function(){
