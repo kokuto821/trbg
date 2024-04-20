@@ -1,0 +1,147 @@
+// pulldown menu
+
+
+<nav class="header__nav nav" id="js-nav">
+    <ul class="nav__items nav-items">
+        <li class="nav-items__item">
+            <p class="nav-items__item--p">メニュー1</p>
+            <ul class="dropdown-items">
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu1-1</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu1-2</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu1-3</a></li>
+            </ul>
+        </li>
+        <li class="nav-items__item">
+            <p class="nav-items__item--p">メニュー2</p>
+            <ul class="dropdown-items">
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu2-1</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu2-2</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu2-3</a></li>
+            </ul>
+        </li>
+        
+        <li class="nav-items__item">
+            <p class="nav-items__item--p">メニュー3</p>
+            <ul class="dropdown-items">
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu3-1</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu3-2</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu3-3</a></li>
+            </ul>
+        </li>
+        <li class="nav-items__item">
+            <p class="nav-items__item--p">メニュー4</p>
+            <ul class="dropdown-items">
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu4-1</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu4-2</a></li>
+                <li class="dropdown-items__item"><a
+                        href="https://github.com/TaichiSato-starcraft/ui-practice"
+                        target="_blank">menu4-3</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+// munu css
+        &:hover {
+            .dropdown-items {
+                @include pc {
+                    display: block;
+                }
+            }
+        }
+// menu js
+
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.nav-items__item--p');
+
+  function toggleItems(item) {
+      // すでに開いているアイテムを閉じる
+      document.querySelectorAll('.dropdown-items.is-open').forEach(function(openItem) {
+          if (item.nextElementSibling !== openItem) {
+              openItem.classList.remove('is-open');
+          }
+      });
+
+      // クリックされたアイテムを開く
+      item.classList.toggle('is-open');
+      if (item.nextElementSibling) {
+          item.nextElementSibling.classList.toggle('is-open');
+          item.nextElementSibling.querySelectorAll('.dropdown-items__item').forEach(function(subItem) {
+              subItem.classList.toggle('is-open');
+          });
+      }
+  }
+
+  function initEventListeners() {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth > 768) {
+          // hoverイベント用
+          items.forEach(function(item) {
+              item.addEventListener('mouseenter', function() {
+                  toggleItems(this);
+              });
+          });
+
+          // dropdown-itemsがhoverされていないときに閉じるイベントを追加
+          document.querySelectorAll('.dropdown-items, .nav-items__item').forEach(function(dropdown) {
+              dropdown.addEventListener('mouseleave', function() {
+                  this.classList.remove('is-open');
+                  this.querySelectorAll('.dropdown-items__item').forEach(function(subItem) {
+                      subItem.classList.remove('is-open');
+                  });
+                  // 親要素のnav-items__item--pのis-openも取り除く
+                  if (this.previousElementSibling.classList.contains('.nav-items__item--p')) {
+                      this.previousElementSibling.classList.remove('is-open');
+                  }
+              });
+          });
+      } else {
+          // クリックイベント用
+          items.forEach(function(item) {
+              item.addEventListener('click', function() {
+                  toggleItems(this);
+              });
+          });
+      }
+  }
+
+  // イベントリスナーを初期化
+  initEventListeners();
+
+  // ウィンドウリサイズ時にイベントリスナーを再設定
+  window.addEventListener('resize', function() {
+      // 既存のイベントリスナーをクリア
+      items.forEach(function(item) {
+          item.removeEventListener('click', toggleItems);
+          item.removeEventListener('mouseenter', toggleItems);
+      });
+      document.querySelectorAll('.dropdown-items').forEach(function(dropdown) {
+          dropdown.removeEventListener('mouseleave', toggleItems);
+      });
+      // イベントリスナーを再初期化
+      initEventListeners();
+  });
+});

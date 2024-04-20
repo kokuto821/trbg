@@ -25,60 +25,16 @@
                     <nav class="header__nav nav" id="js-nav">
                         <ul class="nav__items nav-items">
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p">メニュー1</p>
-                                <ul class="dropdown-items">
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu1-1</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu1-2</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu1-3</a></li>
-                                </ul>
+                                <p class="nav-items__item--p"><a href="">メニュー1</a></p>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p">メニュー2</p>
-                                <ul class="dropdown-items">
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu2-1</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu2-2</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu2-3</a></li>
-                                </ul>
+                                <p class="nav-items__item--p"><a href="">メニュー2</a></p>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p">メニュー3</p>
-                                <ul class="dropdown-items">
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu3-1</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu3-2</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu3-3</a></li>
-                                </ul>
+                                <p class="nav-items__item--p"><a href="">メニュー3</a></p>
                             </li>
                             <li class="nav-items__item">
-                                <p class="nav-items__item--p">メニュー4</p>
-                                <ul class="dropdown-items">
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu4-1</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu4-2</a></li>
-                                    <li class="dropdown-items__item"><a
-                                            href="https://github.com/TaichiSato-starcraft/ui-practice"
-                                            target="_blank">menu4-3</a></li>
-                                </ul>
+                                <p class="nav-items__item--p"><a href="">メニュー4</a></p>
                             </li>
                         </ul>
                     </nav>
