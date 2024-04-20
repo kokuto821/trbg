@@ -4,7 +4,7 @@ const nav = $('#js-nav');//ハンバーガーメニュー
 const body = $('body'); // bodyタグを選択
 
 // ナビゲーションメニューの初期状態を設定
-nav.removeClass('fadein');
+nav.removeClass('fadein fadeout'); // fadeoutクラスを一時的に削除
 nav.addClass('fadeout');
 
 ham.on('click', function () {
@@ -13,13 +13,13 @@ ham.on('click', function () {
 
   if (nav.hasClass('active')) {
     nav.addClass('active');
-    nav.removeClass('fadeout');
     nav.addClass('fadein');
+    nav.removeClass('fadeout');
     body.addClass('no-scroll');
   } else {
     nav.removeClass('active');
-    nav.removeClass('fadein');
     nav.addClass('fadeout');
+    nav.removeClass('fadein');
     body.removeClass('no-scroll');
   }
 });
