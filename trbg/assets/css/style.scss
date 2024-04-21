@@ -198,13 +198,13 @@ img {
             animation-name:fadeInAnime;
             animation-duration:.5s;
             animation-fill-mode:forwards;
-            opacity:0;
+            opacity: 1;
         }
         &.fadeout{
             animation-name:fadeOutAnime;
             animation-duration:.5s;
             animation-fill-mode:forwards;
-            opacity:1;
+            opacity: 0;
         }
         /* その場で */
         @keyframes fadeInAnime{

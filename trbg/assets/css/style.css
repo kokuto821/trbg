@@ -143,13 +143,13 @@ img {
   animation-name: fadeInAnime;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  opacity: 0;
+  opacity: 1;
 }
 .header__nav.fadeout {
   animation-name: fadeOutAnime;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  opacity: 1;
+  opacity: 0;
 }
 @keyframes fadeInAnime {
   from {

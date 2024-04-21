@@ -4,21 +4,31 @@ const nav = $('#js-nav');//ハンバーガーメニュー
 const body = $('body'); // bodyタグを選択
 
 
-nav.css('opacity', 0);//navの透明度の初期値を0にする
+nav.hide(); // navを非表示に設定
+nav.addClass('fadeout')
+
 
 ham.on('click', function () {
   ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
   nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
 
   if (nav.hasClass('active')) {
-    nav.addClass('active');
-    nav.fadeTo('slow', 1); 
     body.addClass('no-scroll');
+    nav.removeClass('fadeout');
+    nav.addClass('fadein');
+    setTimeout(() => {
+      nav.css('display', 'block');
+    }, 10);
+    
   } else {
-    nav.removeClass('active');
-    nav.fadeTo('slow', 0);
+    nav.removeClass('fadein');
+    nav.addClass('fadeout');
+    setTimeout(() => {
+      nav.css('display', 'none');
+    }, 500); // fadeOut完了後にdisplayをnoneに設定
     body.removeClass('no-scroll');
-  }
+  };
+  
 });
 //end
 
@@ -48,6 +58,7 @@ $(window).on('scroll', function() {
 
 });
 
+//クリックするとページトップに戻る
 $('.page-top-button__link').click(function() {
   $('body, html').animate({
     scrollTop: 0
@@ -55,7 +66,7 @@ $('.page-top-button__link').click(function() {
   return false;
 });
 
-$('.page-top-button__lsink').click(function() {
+$('.page-top-button__link').click(function() {
   $('body, html').animate({
     scrollTop: 0
   }, 500);
