@@ -205,6 +205,9 @@ img {
             animation-duration:.5s;
             animation-fill-mode:forwards;
             opacity: 0;
+            @include pc{
+                opacity: 1;
+            }
         }
         /* その場で */
         @keyframes fadeInAnime{

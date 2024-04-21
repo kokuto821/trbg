@@ -4,9 +4,20 @@ const nav = $('#js-nav');//ハンバーガーメニュー
 const body = $('body'); // bodyタグを選択
 
 
-nav.hide(); // navを非表示に設定
-nav.addClass('fadeout')
+function adjustNavDisplay() {
+  if ($(window).width() <= 768) {
+    nav.hide(); // navを非表示に設定
+    nav.addClass('fadeout');
+  } else {
+    nav.css('display', 'flex'); // 769px以上の場合は常にdisplayをflexに設定
+    nav.removeClass('fadeout');
+    nav.removeClass('fadein');
+  }
+}
 
+// 初期表示とウィンドウサイズ変更時にナビゲーションの表示を調整
+adjustNavDisplay();
+$(window).resize(adjustNavDisplay);
 
 ham.on('click', function () {
   ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し

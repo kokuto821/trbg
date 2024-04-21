@@ -151,6 +151,11 @@ img {
   animation-fill-mode: forwards;
   opacity: 0;
 }
+@media screen and (min-width: 768px) {
+  .header__nav.fadeout {
+    opacity: 1;
+  }
+}
 @keyframes fadeInAnime {
   from {
     opacity: 0;
