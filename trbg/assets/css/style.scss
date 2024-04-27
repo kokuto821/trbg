@@ -616,23 +616,21 @@ justify-content: center;
             height: fit-content;
             padding: 0;
             border-bottom: $normal-gray 0.5px solid;
-
-            &:first-child {
-                border-top: $normal-gray 0.5px solid;
-            }
         }
 
         &--a {
-            color: $white;
-            background-color: #4a4a4a;
+            color: $light-black;
+            background-color: $white;
             width: 100%;
-            padding: 0.5rem;
+            padding: 1rem 2rem;
             display: block;
-            text-align: center;
+            text-align: left;
             font-size: 0.95rem;
 
             @include pc {
                 margin-bottom: 0;
+                text-align:center;
+                padding:0.5rem 1rem;
                 background-color: transparent;
                 color: $light-black;
             }

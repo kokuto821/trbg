@@ -539,22 +539,21 @@ img {
     padding: 0;
     border-bottom: #7e7e7e 0.5px solid;
   }
-  .nav-items__item:first-child {
-    border-top: #7e7e7e 0.5px solid;
-  }
 }
 .nav-items__item--a {
-  color: #fff;
-  background-color: #4a4a4a;
+  color: #191919;
+  background-color: #fff;
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem 2rem;
   display: block;
-  text-align: center;
+  text-align: left;
   font-size: 0.95rem;
 }
 @media screen and (min-width: 768px) {
   .nav-items__item--a {
     margin-bottom: 0;
+    text-align: center;
+    padding: 0.5rem 1rem;
     background-color: transparent;
     color: #191919;
   }
