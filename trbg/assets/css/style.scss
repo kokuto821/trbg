@@ -56,6 +56,7 @@ $white-green: #DFEFED;
 }
 body {
     font-size: 16px;
+    color: #494949;
     scroll-behavior: smooth;
     background-color: $light-gray;
     font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "游ゴシック",
@@ -75,6 +76,7 @@ div{
 }
 h2{
     font-size: 1.5rem;
+    font-weight: 500;
 }
 ul,
 li {
@@ -115,7 +117,7 @@ img {
 
     @include pc {
         grid-template-columns:2fr 1fr;
-        grid-template-rows: $header 2rem 1fr auto 2rem;
+        grid-template-rows: $header 0rem 1fr auto 2rem;
         grid-template-areas:
             "header header"
             "head head"
@@ -256,7 +258,6 @@ img {
     &__article {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
 
         &:first-child{
@@ -288,13 +289,18 @@ img {
                 }
             }
         }
-
+s
         &--title {
             font-size: 1.25rem;
         }
 
         &--link {
             border-bottom: black 1px solid;
+            text-align: center;
+            margin: 0 30vw;
+            @include pc {
+                margin: 0 22.5vw;
+            }
         }
     }
 }
@@ -317,7 +323,6 @@ img {
     &__article {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         width: 100%;
         div{
@@ -335,6 +340,11 @@ img {
 
         &--link {
             border-bottom: black 1px solid;
+            text-align: center;
+            margin: 0 30vw;
+            @include pc {
+                margin: 0 22.5vw;
+            }
         }
     }
 

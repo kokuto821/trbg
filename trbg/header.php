@@ -25,7 +25,7 @@
                     <nav class="header__nav nav" id="js-nav">
                         <ul class="nav__items nav-items">
                             <li class="nav-items__item">
-                                <a class="nav-items__item--a">メニュー1</a>
+                                <a class="nav-items__item--a">メニュー1<span clsss=""></span></a>
                             </li>
                             <li class="nav-items__item">
                                 <a class="nav-items__item--a">メニュー2</a>

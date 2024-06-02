@@ -19,7 +19,14 @@ function adjustNavDisplay() {
 adjustNavDisplay();
 $(window).resize(adjustNavDisplay);
 
+let isClickable = true; // クリック可能かどうかを管理するフラグ
+
 ham.on('click', function () {
+  if (!isClickable) return; // クリック不可なら何もしない
+  setTimeout(() => {
+    isClickable = true; // 1秒後にクリックを有効にする
+  }, 500);
+
   ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
   nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
 
@@ -30,6 +37,7 @@ ham.on('click', function () {
     setTimeout(() => {
       nav.css('display', 'block');
     }, 10);
+    isClickable = false;
     
   } else {
     nav.removeClass('fadein');
@@ -38,8 +46,8 @@ ham.on('click', function () {
       nav.css('display', 'none');
     }, 500); // fadeOut完了後にdisplayをnoneに設定
     body.removeClass('no-scroll');
+    isClickable = false;
   };
-  
 });
 //end
 

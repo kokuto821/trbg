@@ -1,7 +1,7 @@
 <div class="side-bar--right">
     <div class="menu">
         <div class="circle-image">
-            <img src="https://code-jump.com/demo/html/blog/img/author.jpg" alt="">
+            <img src="<?php echo esc_url(home_url()); ?>/wp-content/themes/trbg/assets/img/1711057371028.jpg" alt="">
         </div>
         <h2 class="menu__title">Name Name</h2>
         <div class="prof__text">
