@@ -20,12 +20,12 @@
                     <?php if (has_post_thumbnail()):?>
                         <?php the_post_thumbnail( 'archive_thumbnail' ); ?>
                     <?php else: ?>
-                    <img src="https://code-jump.com/demo/html/blog/img/ranking1.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/assets/img/20200501_noimage.png" alt="No Image">
                     <?php endif; ?>
                 </div>
                 <div class="post__title">
                     <h3><?php the_title() ;?></h3>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    <p><?php echo wp_trim_words(get_the_excerpt(), 30 , '...');?></p>
                 </div>
                 <ul class="meta">
                     <li class="post__category"><?php the_category(',');?></li>
@@ -34,7 +34,6 @@
                     </li>
                 </ul>
             </a>
-            
         </article>
             <?php endwhile;?>
         <?php endif;?>
