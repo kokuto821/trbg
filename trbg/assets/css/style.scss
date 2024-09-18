@@ -31,6 +31,7 @@ $tab: 880px;
 // size
 $header: 4rem;
 $gap: 2rem;
+$content-width:1200px;
 // color
 $white: #fff;
 $pink: #ffeffd;
@@ -103,7 +104,7 @@ img {
 .content__grid {
     min-height: 100rem;
     display: grid;
-    width: 1200px;
+    width: $content-width;
     grid-template-columns: 1fr;
     grid-template-rows: 4rem 1rem 1fr auto auto 1rem;
     grid-template-areas:
@@ -137,6 +138,13 @@ img {
     right: 0;
     z-index: 999;
     transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: $light-black 1px solid;
+    @include pc{
+        border-bottom: none;
+    }
 
     &.fade-out {
         opacity: 0;
@@ -149,9 +157,9 @@ img {
         justify-content: space-between;
         height: inherit;
         position: relative;
-        @include mobile{
-            border-bottom: $light-black 1px solid;
-        }
+
+        width: $content-width;
+
     }
 
     &__title {
@@ -342,6 +350,7 @@ s
             border-bottom: black 1px solid;
             text-align: center;
             margin: 0 30vw;
+            width:90px;
             @include pc {
                 margin: 0 22.5vw;
             }

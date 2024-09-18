@@ -84,6 +84,15 @@ img {
   right: 0;
   z-index: 999;
   transition: opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: #191919 1px solid;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    border-bottom: none;
+  }
 }
 .header.fade-out {
   opacity: 0;
@@ -95,11 +104,7 @@ img {
   justify-content: space-between;
   height: inherit;
   position: relative;
-}
-@media screen and (max-width: 768px) {
-  .header__inner {
-    border-bottom: #191919 1px solid;
-  }
+  width: 1200px;
 }
 .header__title {
   width: 10rem;
@@ -287,6 +292,7 @@ s .head__article:last-child--title {
   border-bottom: black 1px solid;
   text-align: center;
   margin: 0 30vw;
+  width: 90px;
 }
 @media screen and (min-width: 768px) {
   .main__article--link {
