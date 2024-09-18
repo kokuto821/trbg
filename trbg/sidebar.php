@@ -11,38 +11,61 @@
     </div>
 
     <div class="menu">
-        <h2 class="menu__title">Ranking</h2>
-
+    <h2 class="menu__title">Ranking</h2>
+    <?php
+function update_post_views() {
+    if (is_single()) {
+        $post_id = get_the_ID();
+        $count_key = 'post_views_count';
+        $count = get_post_meta($post_id, $count_key, true);
+        if ($count == '') {
+            delete_post_meta($post_id, $count_key);
+            add_post_meta($post_id, $count_key, '0');
+        } else {
+            $count++;
+            update_post_meta($post_id, $count_key, $count);
+        }
+    }
+}
+add_action('wp_head', 'update_post_views');
+?>
+    <?php
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+        'meta_key' => 'post_views_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC'
+    );
+    $popular_posts = new WP_Query($args);
+    
+    if ($popular_posts->have_posts()) :
+        $rank = 1;
+        while ($popular_posts->have_posts()) : $popular_posts->the_post();
+            $views = get_post_meta(get_the_ID(), 'post_views_count', true);
+    ?>
         <div class="menu__box">
             <div class="post__eyecatch">
-                <img src="https://code-jump.com/demo/html/blog/img/ranking1.jpg" alt="">
+                <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.jpg" alt="No Image">
+                <?php endif; ?>
             </div>
             <div class="post__title">
-                <p>タイトルテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></p>
             </div>
+            <div class="post__views">閲覧数: <?php echo $views ? $views : '0'; ?></div>
         </div>
-
-
-        <div class="menu__box">
-            <div class="post__eyecatch">
-                <img src="https://code-jump.com/demo/html/blog/img/ranking2.jpg" alt="">
-            </div>
-            <div class="post__title">
-                <p>タイトルテキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-        </div>
-
-
-        <div class="menu__box">
-            <div class="post__eyecatch">
-                <img src="https://code-jump.com/demo/html/blog/img/ranking3.jpg" alt="">
-            </div>
-            <div class="post__title">
-                <p>タイトルテキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-        </div>
-
-    </div>
+    <?php
+        $rank++;
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo '<p>記事がありません。</p>';
+    endif;
+    ?>
+</div>
 
     <div class="menu">
         <h2 class="menu__title">Archive</h2>
