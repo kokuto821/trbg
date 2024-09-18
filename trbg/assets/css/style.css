@@ -268,7 +268,7 @@ s .head__article:last-child--title {
 }
 @media screen and (min-width: 768px) {
   .main {
-    padding: 3rem 2rem 2rem 4rem;
+    padding: 1.5rem 2rem 2rem 4rem;
   }
 }
 .main__article {
