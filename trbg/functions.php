@@ -6,3 +6,4 @@ function trbg_theme_setup() {
     add_image_size('archive_thumbnail',300,150, true );
 }
 add_action("after_setup_theme","trbg_theme_setup");
+add_filter('wp_img_tag_add_width_and_height_attr', '__return_false');

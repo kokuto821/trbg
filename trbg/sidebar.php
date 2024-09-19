@@ -12,7 +12,7 @@
 
     <div class="menu">
     <h2 class="menu__title">Ranking</h2>
-    <?php
+    <div?php
 function update_post_views() {
     if (is_single()) {
         $post_id = get_the_ID();
@@ -47,9 +47,13 @@ add_action('wp_head', 'update_post_views');
         <div class="menu__box">
             <div class="post__eyecatch">
                 <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <div class="side-bar__image-cover">
+                        <?php the_post_thumbnail('large'); ?>
+                    </div>
                 <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.jpg" alt="No Image">
+                    <div class="side-bar__image-cover">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.png" alt="No Image">
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="post__title">
