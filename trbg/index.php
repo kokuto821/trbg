@@ -26,20 +26,25 @@
         </ul>
       </div>
       <div class="eyecatch">
-        <?php 
-        if (has_post_thumbnail()) :
-          the_post_thumbnail('large');
-        else :
-        ?>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.png" alt="No Image">
+      <?php 
+      if (has_post_thumbnail()) :
+          echo '<a href="' . get_permalink() . '" class="main__article-link">';
+          echo get_the_post_thumbnail(get_the_ID(), 'large');
+          echo '</a>';
+      else :
+      ?>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/no-image.png" alt="No Image">
         <?php endif; ?>
       </div>
       <div>
         <p><?php echo wp_trim_words(get_the_content(), 55, '...'); ?></p>
       </div>
-      <a href="<?php the_permalink(); ?>" class="main__article--link">
-        Read More
+      <div>
+      <a href="<?php the_permalink(); ?>" class="main__article-link">
+        <span class="main__article-link--text">Read More</span>
       </a>
+      </div>
+
     </div>
   <?php
     endwhile;
